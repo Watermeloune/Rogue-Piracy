@@ -8,37 +8,40 @@ Matelot::Matelot(unsigned int force, unsigned int maxPv, unsigned std::string no
   _nom = nom;
 }
 
+Matelot::~Matelot() {
+  
+}
 
-int GET_pv() {
+int Matelot::getPv() {
   return _pv;
 }
 
-int GET_force() {
+int Matelot::getForce() {
   return _force;
 }
 
-int GET_maxPV() {
+int Matelot::getMaxPV() {
   return _maxPv;
 }
 
-std::string GET_nom() {
+std::string Matelot::getNom() {
   return _nom;
 }
 
-void SET_pv(int pv) {
+void Matelot::setPv(int pv) {
   _pv = pv;
 }
 
-void SET_force(int force) {
+void Matelot::setForce(int force) {
   _force = force;
 }
 
-void SET_maxPV(int maxPv) {
+void Matelot::setMaxPV(int maxPv) {
   _maxPv = maxPv
 }
 
-void addPv(int pv) {
-  SET_pv(_pv + pv);
+void Matelot::soigner(int pv) {
+  setPv(_pv + pv);
   if (_pv >= _maxPv) {
     _pv = _maxPv;
   }
@@ -48,11 +51,11 @@ void addPv(int pv) {
   }
 }
 
-void removePv(int pv) {
+void Matelot::removePv(int pv) {
   if (pv >= _pv) {
     delete this;
   } else {
-    SET_pv(_pv - pv);
+    setPv(_pv - pv);
   }
 
   if (_pv < _maxPv/2) {
@@ -60,6 +63,6 @@ void removePv(int pv) {
   }
 }
 
-bool isHarmed() {
+bool Matelot::isHarmed() {
   return _blesse;
 }
