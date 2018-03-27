@@ -1,68 +1,68 @@
 #include "Matelot.h"
 
 Matelot::Matelot(unsigned int force, unsigned int maxPv, unsigned std::string nom) {
-  _force = force;
-  _maxPv = maxPv;
-  _pv = maxPv;
-  _blesse = false;
-  _nom = nom;
+  this->force = force;
+  this->maxPv = maxPv;
+  this->pv = maxPv;
+  this->blesse = false;
+  this->nom = nom;
 }
 
 Matelot::~Matelot() {
-  
+
 }
 
 int Matelot::getPv() {
-  return _pv;
+  return pv;
 }
 
 int Matelot::getForce() {
-  return _force;
+  return force;
 }
 
 int Matelot::getMaxPV() {
-  return _maxPv;
+  return maxPv;
 }
 
 std::string Matelot::getNom() {
-  return _nom;
+  return nom;
 }
 
 void Matelot::setPv(int pv) {
-  _pv = pv;
+  pv = pv;
 }
 
 void Matelot::setForce(int force) {
-  _force = force;
+  force = force;
 }
 
 void Matelot::setMaxPV(int maxPv) {
-  _maxPv = maxPv
+  maxPv = maxPv
 }
 
 void Matelot::soigner(int pv) {
-  setPv(_pv + pv);
-  if (_pv >= _maxPv) {
-    _pv = _maxPv;
+  setPv(pv + pv);
+  if (pv >= maxPv) {
+    pv = maxPv;
   }
 
-  if (_pv >= _maxPv/2) {
-    _blesse = false;
+  if (pv >= maxPv/2) {
+    blesse = false;
   }
 }
 
 void Matelot::removePv(int pv) {
-  if (pv >= _pv) {
+  if (pv >= pv) {
     delete this;
   } else {
-    setPv(_pv - pv);
+    setPv(pv - pv);
   }
 
-  if (_pv < _maxPv/2) {
-    _blesse = true;
+  if (pv < maxPv/2) {
+    blesse = true;
   }
 }
 
-bool Matelot::isHarmed() {
-  return _blesse;
+bool Matelot::estBlesse() {
+  return blesse;
 }
