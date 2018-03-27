@@ -9,4 +9,3 @@ Bateau::~Bateau()
 {
     //dtor
 }
-

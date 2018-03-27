@@ -54,15 +54,15 @@ class Bateau
         int PV;
         int capacite_cargo ;
         int capacite_equipage ;
-<<<<<<< HEAD
+//<<<<<<<
         // Sprite sprite ;
         //Equipage equipage ;
         //vector<Objet> cargo;
         //vector <Arme> listeArme;
         string nom ;
-=======
+//=======
 
->>>>>>> 9566cf95e55dedaa7c4198b3cf46e922136b8b43
+//>>>>>>> 9566cf95e55dedaa7c4198b3cf46e922136b8b43
 
 };
 
