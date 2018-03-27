@@ -6,11 +6,11 @@
 
 class Matelot {
 private:
-  unsigned int _pv;
-  unsigned int _force;
-  bool _blesse;
-  unsigned int _maxPv;
-  std::string _nom;
+  unsigned int pv;
+  unsigned int force;
+  bool blesse;
+  unsigned int maxPv;
+  std::string nom;
 
 public:
   Matelot (unsigned int force, unsigned int maxPv, std::nom);
@@ -26,7 +26,7 @@ public:
   void soigner(unsigned int pv);
   void removePv(unsigned int pv);
 
-  bool isHarmed();
+  bool estBlesse();
 
 
   virtual ~Matelot ();

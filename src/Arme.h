@@ -2,6 +2,7 @@
 #define ARME_H
 
 #include <vector>
+#include <iostream>
 
 #include "Matelot.h"
 
