@@ -14,9 +14,8 @@ class Bateau
         int PV;
         int capacite_cargo ;
         int capacite_equipage ;
-        
-        
+
+
 };
 
 #endif // BATEAU_H
-
