@@ -30,7 +30,7 @@ std::string Matelot::getNom() {
 
 void Matelot::setPv(int pv) {
     assert(pv<=maxPv);
-    assert(pv>=0);
+    assert(pv>=0    );
   this->pv = pv;
 }
 
