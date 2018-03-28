@@ -2,6 +2,7 @@
 #define MATELOT_H
 
 #include <iostream>
+#include <cassert>
 
 
 class Matelot {
@@ -13,7 +14,7 @@ private:
   std::string nom;
 
 public:
-  Matelot (unsigned int force, unsigned int maxPv, std::nom);
+  Matelot (unsigned int force, unsigned int maxPv, std::string nom);
   unsigned int getPv();
   unsigned int getForce();
   unsigned int getMaxPV();
@@ -22,6 +23,7 @@ public:
   void setPv(unsigned int pv);
   void setForce(unsigned int force);
   void setMaxPV(unsigned int maxPv);
+  void setNom(std::string nom);
 
   void soigner(unsigned int b);
   void removePv(unsigned int d);
