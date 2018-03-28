@@ -12,16 +12,12 @@ int main()
     int Pv;
     std::string nom;
 
-    std::cout << "Pv : " << Pedro.getPv() << '\n';
     std::cout << "Max Pv : " << Pedro.getMaxPV() << '\n';
+    std::cout << "Pv : " << Pedro.getPv() << '\n';
     std::cout << "Force : " << Pedro.getForce() << '\n';
     std::cout << "Nom : " << Pedro.getNom() << '\n';
 
     std::cout << "=============================================" << '\n';
-
-    std::cout << "set Force : ";
-    std::cin >> force;
-    Pedro.setForce(force);
 
     std::cout << "set maxPv : ";
     std::cin >> maxPv;
@@ -31,15 +27,18 @@ int main()
     std::cin >> Pv;
     Pedro.setPv(Pv);
 
+    std::cout << "set Force : ";
+    std::cin >> force;
+    Pedro.setForce(force);
+
     std::cout << "set Nom : ";
     std::cin >> nom;
     Pedro.setNom(nom);
 
     std::cout << "=============================================" << '\n';
 
-
-    std::cout << "Pv : " << Pedro.getPv() << '\n';
     std::cout << "Max Pv : " << Pedro.getMaxPV ()<< '\n';
+    std::cout << "Pv : " << Pedro.getPv() << '\n';
     std::cout << "Force : " << Pedro.getForce() << '\n';
     std::cout << "Nom : " << Pedro.getNom() << '\n';
 
