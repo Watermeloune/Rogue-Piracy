@@ -1,49 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <typeinfo>
 #include "Matelot.h"
 #include "Bateau.h"
+using namespace std;
 
 
 int main()
 {
-    Matelot Pedro(5,10,"Pedro");
-    int force;
-    int maxPv;
-    int Pv;
-    std::string nom;
-
-    std::cout << "Max Pv : " << Pedro.getMaxPV() << '\n';
-    std::cout << "Pv : " << Pedro.getPv() << '\n';
-    std::cout << "Force : " << Pedro.getForce() << '\n';
-    std::cout << "Nom : " << Pedro.getNom() << '\n';
-
-    std::cout << "=============================================" << '\n';
-
-    std::cout << "set maxPv : ";
-    std::cin >> maxPv;
-    Pedro.setMaxPV(maxPv);
-
-    std::cout << "set Pv : ";
-    std::cin >> Pv;
-    Pedro.setPv(Pv);
-
-    std::cout << "set Force : ";
-    std::cin >> force;
-    Pedro.setForce(force);
-
-    std::cout << "set Nom : ";
-    std::cin >> nom;
-    Pedro.setNom(nom);
-
-    std::cout << "=============================================" << '\n';
-
-    std::cout << "Max Pv : " << Pedro.getMaxPV ()<< '\n';
-    std::cout << "Pv : " << Pedro.getPv() << '\n';
-    std::cout << "Force : " << Pedro.getForce() << '\n';
-    std::cout << "Nom : " << Pedro.getNom() << '\n';
-
-
-
 
     return 0;
 }

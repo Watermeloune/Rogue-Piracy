@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 
 #ifndef BATEAU_H
 #define BATEAU_H
@@ -7,12 +8,15 @@
 class Bateau
 {
     public:
-        Bateau(int PV, int capacite_cargo, int capacite_equipage);
+        Bateau(int maxPv, int PV, int capacite_cargo, int capacite_equipage, std::string nom);
         ~Bateau();
 
 /**###########SET/GET#################*/
         void setPV(int PV);
         int  getPV();
+
+        void setMaxPv(int maxPv);
+        int  getMaxPv();
 
         void setCapacite_cargo(int cap);
         int  getCapacite_cargo();
@@ -50,6 +54,7 @@ class Bateau
     private:
 
         int PV;
+        int maxPv;
         int capacite_cargo ;
         int capacite_equipage ;
 //<<<<<<<

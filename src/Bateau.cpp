@@ -1,10 +1,12 @@
 #include "Bateau.h"
 
-Bateau::Bateau(int PV, int capacite_cargo, int capacite_equipage)
+Bateau::Bateau(int maxPv, int PV, int capacite_cargo, int capacite_equipage, std::string nom)
 {
+    this->maxPv=maxPv;
     this->PV=PV;
     this->capacite_cargo=capacite_cargo;
     this->capacite_equipage=capacite_equipage;
+    this->nom=nom;
 }
 
 Bateau::~Bateau()
@@ -14,6 +16,8 @@ Bateau::~Bateau()
 
 void Bateau::setPV(int PV)
 {
+    assert(PV>=0);
+    assert(PV<=maxPv);
     this->PV=PV;
 }
 
@@ -22,8 +26,21 @@ int Bateau::getPV()
     return this->PV;
 }
 
+void Bateau::setMaxPv(int maxPv)
+{
+    assert(maxPv>=0);
+    this->maxPv=maxPv;
+}
+
+int Bateau::getMaxPv()
+{
+    return this->maxPv;
+}
+
+
 void Bateau::setCapacite_cargo(int cap)
 {
+    assert(cap>=0);
     this->capacite_cargo=cap;
 }
 
@@ -34,6 +51,7 @@ int Bateau::getCapacite_cargo()
 
 void Bateau::setCapacite_equipage(int cap)
 {
+    assert(cap>=0);
     this->capacite_equipage=cap;
 }
 
