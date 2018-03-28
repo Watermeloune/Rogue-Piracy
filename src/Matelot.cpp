@@ -12,15 +12,15 @@ Matelot::~Matelot() {
 
 }
 
-int Matelot::getPv() {
+unsigned int Matelot::getPv() {
   return pv;
 }
 
-int Matelot::getForce() {
+unsigned int Matelot::getForce() {
   return force;
 }
 
-int Matelot::getMaxPV() {
+unsigned int Matelot::getMaxPV() {
   return maxPv;
 }
 
@@ -28,20 +28,20 @@ std::string Matelot::getNom() {
   return nom;
 }
 
-void Matelot::setPv(int pv) {
+void Matelot::setPv(unsigned int pv) {
   pv = pv;
 }
 
-void Matelot::setForce(int force) {
+void Matelot::setForce(unsigned int force) {
   force = force;
 }
 
-void Matelot::setMaxPV(int maxPv) {
-  maxPv = maxPv
+void Matelot::setMaxPV(unsigned int maxPv) {
+  maxPv = maxPv;
 }
 
-void Matelot::soigner(int pv) {
-  setPv(pv + pv);
+void Matelot::soigner(unsigned int b) {
+  pv += b;
   if (pv >= maxPv) {
     pv = maxPv;
   }
@@ -51,11 +51,11 @@ void Matelot::soigner(int pv) {
   }
 }
 
-void Matelot::removePv(int pv) {
-  if (pv >= pv) {
+void Matelot::removePv(unsigned int d) {
+  if (d >= pv) {
     delete this;
   } else {
-    setPv(pv - pv);
+    pv -= d;
   }
 
   if (pv < maxPv/2) {

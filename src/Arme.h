@@ -17,7 +17,7 @@ private:
 
 
 public:
-  Arme (int degats, int nbMatelots, int maxPv, int prix);
+  Arme (unsigned int degats, unsigned int nbMatelots, unsigned int maxPv, unsigned int prix);
 
   unsigned int getDegats();
   unsigned int getNbMat();
@@ -31,9 +31,9 @@ public:
   void setMaxPv(unsigned int m);
   void setPrix(unsigned int p);
 
-  void reparer(int bonus);
-  void endommager(int degats);
-
+  void reparer(unsigned int bonus);
+  void endommager(unsigned int degats);
+  void ajouterMatelot(Matelot mat, unsigned int i);
 
   virtual ~Arme ();
 

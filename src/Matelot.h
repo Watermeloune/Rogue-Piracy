@@ -14,17 +14,17 @@ private:
 
 public:
   Matelot (unsigned int force, unsigned int maxPv, std::nom);
-  int getPv();
-  int getForce();
-  int getMaxPV();
+  unsigned int getPv();
+  unsigned int getForce();
+  unsigned int getMaxPV();
   std::string getNom();
 
   void setPv(unsigned int pv);
   void setForce(unsigned int force);
   void setMaxPV(unsigned int maxPv);
 
-  void soigner(unsigned int pv);
-  void removePv(unsigned int pv);
+  void soigner(unsigned int b);
+  void removePv(unsigned int d);
 
   bool estBlesse();
 
