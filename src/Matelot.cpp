@@ -1,6 +1,6 @@
 #include "Matelot.h"
 
-Matelot::Matelot(unsigned int force, unsigned int maxPv, unsigned std::string nom) {
+Matelot::Matelot(int force, int maxPv, std::string nom) {
   this->force = force;
   this->maxPv = maxPv;
   this->pv = maxPv;
@@ -12,15 +12,15 @@ Matelot::~Matelot() {
 
 }
 
-unsigned int Matelot::getPv() {
+int Matelot::getPv() {
   return pv;
 }
 
-unsigned int Matelot::getForce() {
+int Matelot::getForce() {
   return force;
 }
 
-unsigned int Matelot::getMaxPV() {
+int Matelot::getMaxPV() {
   return maxPv;
 }
 
@@ -28,19 +28,19 @@ std::string Matelot::getNom() {
   return nom;
 }
 
-void Matelot::setPv(unsigned int pv) {
+void Matelot::setPv(int pv) {
   pv = pv;
 }
 
-void Matelot::setForce(unsigned int force) {
+void Matelot::setForce(int force) {
   force = force;
 }
 
-void Matelot::setMaxPV(unsigned int maxPv) {
+void Matelot::setMaxPV(int maxPv) {
   maxPv = maxPv;
 }
 
-void Matelot::soigner(unsigned int b) {
+void Matelot::soigner(int b) {
   pv += b;
   if (pv >= maxPv) {
     pv = maxPv;
@@ -51,7 +51,7 @@ void Matelot::soigner(unsigned int b) {
   }
 }
 
-void Matelot::removePv(unsigned int d) {
+void Matelot::removePv(int d) {
   if (d >= pv) {
     delete this;
   } else {

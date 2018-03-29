@@ -6,25 +6,25 @@
 
 class Matelot {
 private:
-  unsigned int pv;
-  unsigned int force;
+  int pv;
+  int force;
   bool blesse;
-  unsigned int maxPv;
+  int maxPv;
   std::string nom;
 
 public:
-  Matelot (unsigned int force, unsigned int maxPv, std::nom);
-  unsigned int getPv();
-  unsigned int getForce();
-  unsigned int getMaxPV();
+  Matelot (int force, int maxPv, std::nom);
+  int getPv();
+  int getForce();
+  int getMaxPV();
   std::string getNom();
 
-  void setPv(unsigned int pv);
-  void setForce(unsigned int force);
-  void setMaxPV(unsigned int maxPv);
+  void setPv(int pv);
+  void setForce(int force);
+  void setMaxPV(int maxPv);
 
-  void soigner(unsigned int b);
-  void removePv(unsigned int d);
+  void soigner(int b);
+  void removePv(int d);
 
   bool estBlesse();
 

@@ -8,32 +8,32 @@
 
 class Arme {
 private:
-  unsigned int degats;
-  unsigned int nbMat; //nombre de matelots nécessaire pour utiliser l'arme
-  unsigned int pv;
-  unsigned int maxPv;
-  unsigned int prix;
+  int degats;
+  int nbMat; //nombre de matelots nécessaire pour utiliser l'arme
+  int pv;
+  int maxPv;
+  int prix;
   std::vector<Matelot> listeMat;
 
 
 public:
-  Arme (unsigned int degats, unsigned int nbMatelots, unsigned int maxPv, unsigned int prix);
+  Arme (int degats, int nbMatelots, int maxPv, int prix);
 
-  unsigned int getDegats();
-  unsigned int getNbMat();
-  unsigned int getPv();
-  unsigned int getMaxPv();
-  unsigned int getPrix();
+  int getDegats();
+  int getNbMat();
+  int getPv();
+  int getMaxPv();
+  int getPrix();
 
-  void setDegats(unsigned int d);
-  void setNbMat(unsigned int n);
-  void setPv(unsigned int p);
-  void setMaxPv(unsigned int m);
-  void setPrix(unsigned int p);
+  void setDegats(int d);
+  void setNbMat(int n);
+  void setPv(int p);
+  void setMaxPv(int m);
+  void setPrix(int p);
 
-  void reparer(unsigned int bonus);
-  void endommager(unsigned int degats);
-  void ajouterMatelot(Matelot mat, unsigned int i);
+  void reparer(int bonus);
+  void endommager(int degats);
+  void ajouterMatelot(Matelot mat, int i);
 
   virtual ~Arme ();
 

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 
-Arme::Arme (unsigned int degats, unsigned int nbMatelots, unsigned int maxPv, unsigned int prix) {
+Arme::Arme (int degats, int nbMatelots, int maxPv, int prix) {
   this->degats = degats;
   this->nbMat = nbMatelots;
   this->pv = maxPv;
@@ -16,54 +16,54 @@ Arme::~Arme () {
 
 }
 
-unsigned int Arme::getDegats(){
+int Arme::getDegats(){
   return degats;
 }
-unsigned int Arme::getNbMat(){
+int Arme::getNbMat(){
   return nbMat;
 }
 
-unsigned int Arme::getPv(){
+int Arme::getPv(){
   return pv;
 }
 
-unsigned int Arme::getMaxPv(){
+int Arme::getMaxPv(){
   return maxPv;
 }
 
-unsigned int Arme::getPrix(){
+int Arme::getPrix(){
   return prix;
 }
 
 
-void Arme::setDegats(unsigned int d){
+void Arme::setDegats(int d){
   degats = d;
 }
 
-void Arme::setNbMat(unsigned int n){
+void Arme::setNbMat(int n){
   nbMat = n;
 }
 
-void Arme::setPv(unsigned int p){
+void Arme::setPv(int p){
   pv = p;
 }
 
-void Arme::setMaxPv(unsigned int m){
+void Arme::setMaxPv(int m){
   maxPv = m;
 }
 
-void Arme::setPrix(unsigned int p){
+void Arme::setPrix(int p){
   prix = p;
 }
 
-void Arme::reparer(unsigned int bonus);{
+void Arme::reparer(int bonus);{
   pv += bonus;
   if (pv > maxPv) {
     pv = maxPv;
   }
 }
 
-void Arme::endommager(unsigned int degats){
+void Arme::endommager(int degats){
   if (pv <= degats) {
     delete this;
   } else {
@@ -71,7 +71,7 @@ void Arme::endommager(unsigned int degats){
   }
 }
 
-void Arme::ajouterMatelot(Matelot mat, unsigned int i) {
+void Arme::ajouterMatelot(Matelot mat, int i) {
   if (i<nbMat) {
     if (!listeMat[i]) {
       listeMat[i] = mat;
