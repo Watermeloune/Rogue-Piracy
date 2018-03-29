@@ -15,7 +15,7 @@ Matelot::Matelot() {
   this->blesse = false;
   this->nom = "Jean-Louis";
 }
-
+//destructeur par défaut
 Matelot::~Matelot() {
 
 }
