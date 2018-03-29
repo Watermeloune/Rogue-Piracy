@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include "Equipage.h"
 
 #ifndef BATEAU_H
 #define BATEAU_H
@@ -29,8 +30,8 @@ class Bateau
 //        void setSprite();
 //        Sprite setSprite();
 
-//        void setEquipage() ;
-//        Equipage getEquipage() ;
+        void setEquipage(Equipage equipage) ;
+        Equipage getEquipage() ;
 
 //        void setCargo();
 //        Objet getCargo();
@@ -59,7 +60,7 @@ class Bateau
         int capacite_equipage ;
 //<<<<<<<
         // Sprite sprite ;
-        //Equipage equipage ;
+        Equipage equipage ;
         //vector<Objet> cargo;
         //vector <Arme> listeArme;
         std::string nom ;

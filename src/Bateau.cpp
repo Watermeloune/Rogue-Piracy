@@ -69,3 +69,13 @@ std::string Bateau::getNom()
 {
     return this->nom;
 }
+
+void Bateau::setEquipage(Equipage equipage)
+{
+    //constructeur par copie a faire
+}
+
+Equipage Bateau::getEquipage()
+{
+    return equipage;
+}

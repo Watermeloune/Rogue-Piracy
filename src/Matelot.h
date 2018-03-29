@@ -15,6 +15,7 @@ private:
 
 public:
   Matelot (int force, int maxPv, std::string nom);
+  Matelot();
   int getPv();
   int getForce();
   int getMaxPV();

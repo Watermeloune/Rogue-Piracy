@@ -7,6 +7,14 @@ Matelot::Matelot(int force, int maxPv, std::string nom) {
   this->blesse = false;
   this->nom = nom;
 }
+//constructeur vide qui cree un Jean Louis
+Matelot::Matelot() {
+  this->force = 1;
+  this->maxPv = 1;
+  this->pv = 1;
+  this->blesse = false;
+  this->nom = "Jean-Louis";
+}
 
 Matelot::~Matelot() {
 
