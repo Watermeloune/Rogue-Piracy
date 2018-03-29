@@ -29,23 +29,8 @@ std::string Matelot::getNom() {
 }
 
 void Matelot::setPv(int pv) {
-<<<<<<< HEAD
+    assert(pv>=0);
   pv = pv;
-}
-
-void Matelot::setForce(int force) {
-  force = force;
-}
-
-void Matelot::setMaxPV(int maxPv) {
-  maxPv = maxPv;
-}
-
-void Matelot::soigner(int b) {
-=======
-    assert(pv<=maxPv);
-    assert(pv>=0    );
-  this->pv = pv;
 }
 
 void Matelot::setForce(int force) {
