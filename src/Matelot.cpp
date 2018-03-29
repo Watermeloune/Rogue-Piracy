@@ -29,6 +29,7 @@ std::string Matelot::getNom() {
 }
 
 void Matelot::setPv(int pv) {
+<<<<<<< HEAD
   pv = pv;
 }
 
@@ -41,6 +42,30 @@ void Matelot::setMaxPV(int maxPv) {
 }
 
 void Matelot::soigner(int b) {
+=======
+    assert(pv<=maxPv);
+    assert(pv>=0    );
+  this->pv = pv;
+}
+
+void Matelot::setForce(int force) {
+    assert(force>=0);
+  this->force = force;
+}
+
+void Matelot::setMaxPV(int maxPv) {
+    assert(maxPv>=0);
+  this->maxPv = maxPv;
+}
+
+void Matelot::setNom(std::string nom)
+{
+    this->nom = nom;
+}
+
+
+void Matelot::soigner(int b) {
+    assert(b>=0);
   pv += b;
   if (pv >= maxPv) {
     pv = maxPv;
@@ -52,15 +77,16 @@ void Matelot::soigner(int b) {
 }
 
 void Matelot::removePv(int d) {
-  if (d >= pv) {
-    delete this;
-  } else {
-    pv -= d;
-  }
+    assert(d>=0);
+    if (d >= pv) {
+        delete this;
+    } else {
+        pv -= d;
+    }
 
-  if (pv < maxPv/2) {
-    blesse = true;
-  }
+    if (pv < maxPv/2) {
+        blesse = true;
+    }
 }
 
 bool Matelot::estBlesse() {

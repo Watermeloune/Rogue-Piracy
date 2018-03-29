@@ -1,6 +1,5 @@
 #include <iostream>
-
-using namespace std;
+#include <cassert>
 
 #ifndef BATEAU_H
 #define BATEAU_H
@@ -9,17 +8,20 @@ using namespace std;
 class Bateau
 {
     public:
-        Bateau();
+        Bateau(int maxPv, int PV, int capacite_cargo, int capacite_equipage, std::string nom);
         ~Bateau();
 
 /**###########SET/GET#################*/
-        void setPV();
+        void setPV(int PV);
         int  getPV();
 
-        void setCapacite_cargo();
+        void setMaxPv(int maxPv);
+        int  getMaxPv();
+
+        void setCapacite_cargo(int cap);
         int  getCapacite_cargo();
 
-        void setCapacite_equipage();
+        void setCapacite_equipage(int cap);
         int  getCapacite_equipage();
 
 
@@ -36,8 +38,8 @@ class Bateau
 //        void setListeArme();
 //        Arme getListeArme();
 
-        void setNom();
-        string getNom();
+        void setNom(std::string nom);
+        std::string getNom();
 
 /**###################################*/
 
@@ -52,6 +54,7 @@ class Bateau
     private:
 
         int PV;
+        int maxPv;
         int capacite_cargo ;
         int capacite_equipage ;
 //<<<<<<<
@@ -59,7 +62,7 @@ class Bateau
         //Equipage equipage ;
         //vector<Objet> cargo;
         //vector <Arme> listeArme;
-        string nom ;
+        std::string nom ;
 //=======
 
 //>>>>>>> 9566cf95e55dedaa7c4198b3cf46e922136b8b43
