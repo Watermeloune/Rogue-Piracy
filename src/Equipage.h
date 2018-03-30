@@ -5,7 +5,7 @@
 
 class Equipage {
 private:
-    std::vector<Matelot> equipage;
+    std::vector<Matelot> tabEquipage;
 public:
     Equipage ();
     ~Equipage ();

@@ -7,9 +7,16 @@ using namespace std;
 
 int main()
 {
-    Matelot mt(5,5,"JE SUIS LE MAIN");
     Bateau bat(5,5,5,5,"tortuga");
-    bat.getEquipage().equipage.push_back(mt);
-    std::cout << bat.getEquipage().equipage.size() << '\n';
+    Matelot mt(5,5,"Jean Louis");
+
+    cout << "taille equipage : " << bat.getEquipage()->getTabEquipage()->size()<< '\n';
+    bat.getEquipage()->afficheEquipage();
+    bat.getEquipage()->ajoutMatelot(mt);
+    cout << "taille equipage : " << bat.getEquipage()->getTabEquipage()->size()<< '\n';
+    bat.getEquipage()->afficheEquipage();
+
+
+
     return 0;
 }

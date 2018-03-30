@@ -2,31 +2,31 @@
 
 Equipage::Equipage ()
 {
-
+    std::cout << "equipage cree" << '\n';
 }
 Equipage::~Equipage (){}
 
 void Equipage::ajoutMatelot(Matelot matelot)
 {
-    this->equipage.push_back(matelot);
+    this->tabEquipage.push_back(matelot);
 }
 
 void Equipage::ajoutMatelot()
 {
-    Matelot mt(5,5,"DERPI");
-    this->equipage.push_back(mt);
-    std::cout << "wWTTTFFF" << '\n';
+    Matelot mt(5,5,"JUAN");
+    this->tabEquipage.push_back(mt);
 }
 
 void Equipage::afficheEquipage()
 {
-    for (unsigned int i = 0; i < this->equipage.size(); i++) {
-        std::cout << this->equipage.at(i).getNom() << '\n';
+    for (unsigned int i = 0; i < this->tabEquipage.size(); i++) {
+        std::cout << this->tabEquipage[i].getNom() << '\n';
     }
+
 }
 
 std::vector<Matelot> * Equipage::getTabEquipage()
 {
-    std::vector<Matelot> * v = & this->equipage;
+    std::vector<Matelot> * v = & this->tabEquipage;
     return v;
 }

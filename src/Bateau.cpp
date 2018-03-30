@@ -75,7 +75,8 @@ void Bateau::setEquipage(Equipage equipage)
     //constructeur par copie a faire
 }
 
-Equipage Bateau::getEquipage()
+Equipage * Bateau::getEquipage()
 {
-    return equipage;
+    Equipage * e = & this->equipage;
+    return e;
 }

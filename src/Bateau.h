@@ -31,7 +31,7 @@ class Bateau
 //        Sprite setSprite();
 
         void setEquipage(Equipage equipage) ;
-        Equipage getEquipage() ;
+        Equipage * getEquipage() ;
 
 //        void setCargo();
 //        Objet getCargo();
@@ -60,7 +60,7 @@ class Bateau
         int capacite_equipage ;
 //<<<<<<<
         // Sprite sprite ;
-        Equipage equipage ;
+        Equipage equipage;
         //vector<Objet> cargo;
         //vector <Arme> listeArme;
         std::string nom ;
