@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cassert>
+#include "fonctions.h"
 
 
 class Matelot {
@@ -12,7 +13,7 @@ private:
   bool blesse;
   int maxPv;
   std::string nom;
-  int id; 
+  long id;
 
 public:
   Matelot (int force, int maxPv, std::string nom);

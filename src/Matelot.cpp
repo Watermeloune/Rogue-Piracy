@@ -7,6 +7,7 @@ Matelot::Matelot(int force, int maxPv, std::string nom) {
   this->pv = maxPv;
   this->blesse = false;
   this->nom = nom;
+  //this->id = getTimeMs();
 }
 //constructeur vide qui cree un Jean Louis
 Matelot::Matelot() {
@@ -73,7 +74,7 @@ void Matelot::soigner(int b) {
 void Matelot::removePv(int d) {
     assert(d>=0);
     if (d >= pv) {
-        delete this;
+        pv=0;
     } else {
         pv -= d;
     }

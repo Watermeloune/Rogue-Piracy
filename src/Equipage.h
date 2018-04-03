@@ -12,6 +12,7 @@ public:
     void ajoutMatelot(Matelot matelot);
     void ajoutMatelot();
     void afficheEquipage();
+    void verifMort();
     std::vector<Matelot> * getTabEquipage();
 
 };

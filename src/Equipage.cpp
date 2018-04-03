@@ -25,6 +25,14 @@ void Equipage::afficheEquipage()
 
 }
 
+void Equipage::verifMort()
+{
+    for (size_t i = 0; i < tabEquipage.size(); i++) {
+        if(tabEquipage[i].getPv()==0)
+            tabEquipage.erase(tabEquipage.begin()+i);
+    }
+}
+
 std::vector<Matelot> * Equipage::getTabEquipage()
 {
     std::vector<Matelot> * v = & this->tabEquipage;
