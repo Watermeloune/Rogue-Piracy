@@ -1,5 +1,5 @@
 #include "Matelot.h"
-
+#include "Arme.h"
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
@@ -14,6 +14,15 @@ Arme::Arme (int degats, int nbMatelots, int maxPv, int prix) {
 
 Arme::~Arme () {
 
+}
+
+Arme::Arme()
+{
+    this->degats = 0;
+    this->nbMat = 0;
+    this->pv = 0;
+    this->maxPv = 0;
+    this->prix = 0;
 }
 
 int Arme::getDegats(){
@@ -56,7 +65,7 @@ void Arme::setPrix(int p){
   prix = p;
 }
 
-void Arme::reparer(int bonus);{
+void Arme::reparer(int bonus){
   pv += bonus;
   if (pv > maxPv) {
     pv = maxPv;
@@ -65,14 +74,14 @@ void Arme::reparer(int bonus);{
 
 void Arme::endommager(int degats){
   if (pv <= degats) {
-    delete this;
+    pv=0;
   } else {
     pv -= degats;
   }
 }
 
 void Arme::ajouterMatelot(Matelot mat, int i) {
-  if (i<nbMat) {
+  /*if (i<nbMat) {
     if (!listeMat[i]) {
       listeMat[i] = mat;
     } else {
@@ -85,5 +94,5 @@ void Arme::ajouterMatelot(Matelot mat, int i) {
     }
 }   else {
         std::cout << "valeur trop grande pour i" << '\n';
-    }
+    }*/
 }

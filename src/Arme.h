@@ -18,6 +18,7 @@ private:
 
 public:
   Arme (int degats, int nbMatelots, int maxPv, int prix);
+  Arme();
 
   int getDegats();
   int getNbMat();

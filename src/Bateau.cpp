@@ -80,3 +80,17 @@ Equipage * Bateau::getEquipage()
     Equipage * e = & this->equipage;
     return e;
 }
+
+std::vector<Arme> * Bateau::getListeArme()
+{
+    std::vector<Arme> * v = & this->listeArme;
+    return v;
+}
+
+/*void Bateau::verifDetruit()
+{
+    for (size_t i = 0; i < listeArme.size(); i++) {
+        if(listeArme[i].getPv()==0)
+            listeArme.erase(listeArme.begin()+i);
+    }
+}*/
