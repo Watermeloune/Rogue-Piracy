@@ -1,6 +1,6 @@
 OBJDIR=obj
 EXEDIR=bin
-CFLAGS =-Wall -pedantic -ansi -std=c++11
+CFLAGS =-Wall -pedantic -ansi -std=c++11 -O3
 CC=g++
 
 RoguePiracy: main.o Bateau.o Matelot.o Equipage.o

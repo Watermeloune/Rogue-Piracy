@@ -12,6 +12,7 @@ private:
   bool blesse;
   int maxPv;
   std::string nom;
+  int id; 
 
 public:
   Matelot (int force, int maxPv, std::string nom);
