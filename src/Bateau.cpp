@@ -14,6 +14,20 @@ Bateau::~Bateau()
     //dtor
 }
 
+Bateau::Bateau(int niveau)
+{
+    srand(time(NULL));
+
+    int min=3+niveau*2;
+    int max=5+niveau*2;
+
+    maxPv=(rand() % (max - min + 1)) + min;
+    PV=maxPv;
+    capacite_cargo=(rand() % (max - min + 1)) + min;
+    capacite_equipage=(rand() % (max - min + 1)) + min;
+    nom="bateau lvl "+std::to_string(niveau);
+}
+
 void Bateau::setPV(int PV)
 {
     assert(PV>=0);
@@ -85,6 +99,20 @@ std::vector<Arme> * Bateau::getListeArme()
 {
     std::vector<Arme> * v = & this->listeArme;
     return v;
+}
+
+void Bateau::ajouterArme(Arme arme)
+{
+    listeArme.push_back(arme);
+}
+
+void Bateau::endommager(int dmg)
+{
+    assert(dmg>=0);
+    if(dmg>=this->PV)
+        this->PV=0;
+    else
+        this->PV-=dmg;
 }
 
 /*void Bateau::verifDetruit()

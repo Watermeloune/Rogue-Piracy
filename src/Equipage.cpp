@@ -2,7 +2,6 @@
 
 Equipage::Equipage ()
 {
-    std::cout << "equipage cree" << '\n';
 }
 Equipage::~Equipage (){}
 

@@ -2,6 +2,7 @@
 #include <cassert>
 #include "Equipage.h"
 #include "Arme.h"
+#include <cstdlib>
 
 #ifndef BATEAU_H
 #define BATEAU_H
@@ -12,6 +13,7 @@ class Bateau
     public:
         Bateau(int maxPv, int PV, int capacite_cargo, int capacite_equipage, std::string nom);
         ~Bateau();
+        Bateau(int niveau);
 
 /**###########SET/GET#################*/
         void setPV(int PV);
@@ -27,6 +29,8 @@ class Bateau
         int  getCapacite_equipage();
 
         void verifDetruit();
+
+        void endommager(int dmg);
 
 
 
@@ -51,7 +55,7 @@ class Bateau
 
 //        void ajouterObjet(Objet objet);
 //        void supprimerObjet(Objet objet);
-//        void ajouterArme(Arme arme);
+        void ajouterArme(Arme arme);
 //        void supprimerArme(Arme arme);
 
 
