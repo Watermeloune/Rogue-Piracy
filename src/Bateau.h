@@ -2,6 +2,7 @@
 #include <cassert>
 #include "Equipage.h"
 #include "Arme.h"
+#include "Objet.h"
 #include <cstdlib>
 
 #ifndef BATEAU_H
@@ -53,7 +54,7 @@ class Bateau
 
 /**##########FONCTIONALITÉS###########*/
 
-//        void ajouterObjet(Objet objet);
+        void ajouterObjet(Objet objet);
 //        void supprimerObjet(Objet objet);
         void ajouterArme(Arme arme);
 //        void supprimerArme(Arme arme);
@@ -68,7 +69,7 @@ class Bateau
 //<<<<<<<
         // Sprite sprite ;
         Equipage equipage;
-        //vector<Objet> cargo;
+        std::vector<Objet> cargo;
         std::vector<Arme> listeArme;
         std::string nom ;
 //=======

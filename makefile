@@ -3,8 +3,8 @@ EXEDIR=bin
 CFLAGS =-Wall -pedantic -ansi -std=c++11 -O3 -I./SFML-2.4.2/include
 CC=g++
 
-RoguePiracy: main.o Bateau.o Matelot.o Equipage.o Fonctions.o Arme.o
-	g++ -o $(EXEDIR)/$@ $(OBJDIR)/main.o $(OBJDIR)/Bateau.o $(OBJDIR)/Matelot.o $(OBJDIR)/Arme.o $(OBJDIR)/Fonctions.o $(OBJDIR)/Equipage.o -L./SFML-2.4.2/lib -lsfml-graphics -lsfml-window -lsfml-system
+RoguePiracy: main.o Bateau.o Matelot.o Equipage.o Fonctions.o Arme.o Objet.o
+	g++ -o $(EXEDIR)/$@ $(OBJDIR)/main.o $(OBJDIR)/Bateau.o $(OBJDIR)/Matelot.o $(OBJDIR)/Objet.o $(OBJDIR)/Arme.o $(OBJDIR)/Fonctions.o $(OBJDIR)/Equipage.o -L./SFML-2.4.2/lib -lsfml-graphics -lsfml-window -lsfml-system
 
 main.o: src/main.cpp
 	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
@@ -22,6 +22,9 @@ Fonctions.o: src/fonctions.cpp src/fonctions.h
 	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
 
 Arme.o: src/Arme.cpp src/Arme.h
+	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
+
+Objet.o: src/Objet.cpp src/Objet.h
 	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
 
 

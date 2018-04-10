@@ -112,8 +112,13 @@ void Bateau::endommager(int dmg)
     if(dmg>=this->PV)
         this->PV=0;
     else
-        this->PV-=dmg;
+        this->PV=PV-dmg;
 }
+void Bateau::ajouterObjet(Objet objet)
+{
+    this->cargo.push_back(objet);
+}
+
 
 /*void Bateau::verifDetruit()
 {

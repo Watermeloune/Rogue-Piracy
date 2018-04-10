@@ -1,12 +1,14 @@
-#ifndef ILE_H
-#define ILE_H
+#ifndef Ile_H
+#define Ile_H
 
-
-class ILE
+#include <cstdlib>
+#include <iostream>
+class Ile
 {
     public:
-        ILE();
-        ~ILE();
+        Ile();
+        Ile(int niveau);
+        ~Ile();
 
         void setType();
         bool getType();
@@ -22,10 +24,10 @@ class ILE
 
     private:
 
-        bool type;
+        //bool type;
         vector <Objet> tabRessource ;
         vector <Objet> tabMagasin ;
-        vector <Objet> tabArmurerie ;
+        vector <Arme> tabArmurerie ;
 };
 
-#endif // ILE_H
+#endif // Ile_H

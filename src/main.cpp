@@ -10,6 +10,7 @@
 #include <cassert>
 #include <time.h>
 #include <unistd.h>
+#include <map>
 
 using namespace std;
 
@@ -44,11 +45,14 @@ int main()
     //init
         Bateau bat(10,10,10,10,"Radeau");
         int lvl=1;
-
+        Objet obj(5,"potion");
+        
     while (bat.getPV()!=0)
     {
         effacerEcran();
         std::cout << "bienvenue sur l'ile numero "<< lvl << '\n';
+        std::cout << "vous gagnez un objet" << '\n';
+        bat.ajouterObjet(obj);
         usleep(1*1000000);
         Bateau bot(lvl);
 
@@ -58,11 +62,12 @@ int main()
             afficheInfoBat(bat);
             afficheInfoBat(bot);
             std::cout << "vous attaquez le bateau ennemi" << '\n';
-            //bot.endommager(1);
-            bot.setPV(bot.getPV()-1);
+            bot.endommager(1);
+            //bot.setPV(bot.getPV()-1);
             usleep(0.5*1000000);
         }
         lvl++;
+
     }
 
 

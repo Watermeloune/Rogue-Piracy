@@ -1,11 +1,17 @@
-#include "ILE.h"
+#include "Ile.h"
 
-ILE::ILE()
+Ile::Ile()
 {
     //ctor
 }
 
-ILE::~ILE()
+Ile::Ile(int niveau)
+{
+    srand(time(NULL));
+
+}
+
+Ile::~Ile()
 {
     //dtor
 }
