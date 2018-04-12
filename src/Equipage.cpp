@@ -37,3 +37,8 @@ std::vector<Matelot> * Equipage::getTabEquipage()
     std::vector<Matelot> * v = & this->tabEquipage;
     return v;
 }
+
+void Equipage::setTabEquipage(std::vector<Matelot> v)
+{
+    tabEquipage=v;
+}

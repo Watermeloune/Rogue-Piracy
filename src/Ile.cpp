@@ -7,8 +7,8 @@ Ile::Ile()
 
 Ile::Ile(int niveau)
 {
-    srand(time(NULL));
-
+    Bateau batlvl(niveau);
+    bot=batlvl;
 }
 
 Ile::~Ile()

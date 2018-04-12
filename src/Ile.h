@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include "Bateau.h"
 class Ile
 {
     public:
@@ -10,10 +11,12 @@ class Ile
         Ile(int niveau);
         ~Ile();
 
+        Bateau bot;
+
         void setType();
         bool getType();
 
-        void  getTabRessource() ;
+        void  setTabRessource() ;
         Objet getTabRessource() ;
 
         void  setTabMagasin() ;
@@ -25,9 +28,9 @@ class Ile
     private:
 
         //bool type;
-        vector <Objet> tabRessource ;
-        vector <Objet> tabMagasin ;
-        vector <Arme> tabArmurerie ;
+        std::vector<Objet>tabRessource ;
+        std::vector<Objet>tabMagasin ;
+        std::vector<Arme> abArmurerie ;
 };
 
 #endif // Ile_H

@@ -12,6 +12,7 @@
 class Bateau
 {
     public:
+        Bateau();
         Bateau(int maxPv, int PV, int capacite_cargo, int capacite_equipage, std::string nom);
         ~Bateau();
         Bateau(int niveau);
@@ -29,6 +30,8 @@ class Bateau
         void setCapacite_equipage(int cap);
         int  getCapacite_equipage();
 
+        void operator=(Bateau copie);
+
         void verifDetruit();
 
         void endommager(int dmg);
@@ -38,7 +41,7 @@ class Bateau
 //        void setSprite();
 //        Sprite setSprite();
 
-        void setEquipage(Equipage equipage) ;
+        void setEquipage(Equipage * ptr);
         Equipage * getEquipage() ;
 
 //        void setCargo();

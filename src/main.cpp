@@ -42,11 +42,12 @@ void afficheInfoBat(Bateau bat)
 
 int main()
 {
+    
     //init
         Bateau bat(10,10,10,10,"Radeau");
         int lvl=1;
         Objet obj(5,"potion");
-        
+
     while (bat.getPV()!=0)
     {
         effacerEcran();

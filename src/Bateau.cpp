@@ -1,4 +1,8 @@
 #include "Bateau.h"
+Bateau::Bateau()
+{
+
+}
 
 Bateau::Bateau(int maxPv, int PV, int capacite_cargo, int capacite_equipage, std::string nom)
 {
@@ -33,6 +37,16 @@ void Bateau::setPV(int PV)
     assert(PV>=0);
     assert(PV<=maxPv);
     this->PV=PV;
+}
+
+void Bateau::operator=(Bateau copie)
+{
+    maxPv=copie.getMaxPv();
+    PV=copie.getPV();
+    capacite_cargo=copie.getCapacite_cargo();
+    capacite_equipage=copie.getCapacite_equipage();
+    setEquipage(copie.getEquipage());
+    nom=copie.getNom();
 }
 
 int Bateau::getPV()
@@ -84,9 +98,12 @@ std::string Bateau::getNom()
     return this->nom;
 }
 
-void Bateau::setEquipage(Equipage equipage)
+void Bateau::setEquipage(Equipage * ptr)
 {
-    //constructeur par copie a faire
+    this->equipage.getTabEquipage()->clear();
+    for (unsigned i = 0; i < ptr->getTabEquipage()->size(); i++) {
+        this->equipage.getTabEquipage()->push_back(ptr->getTabEquipage()->at(i));
+    }
 }
 
 Equipage * Bateau::getEquipage()

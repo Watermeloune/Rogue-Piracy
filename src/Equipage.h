@@ -14,6 +14,7 @@ public:
     void afficheEquipage();
     void verifMort();
     std::vector<Matelot> * getTabEquipage();
+    void setTabEquipage(std::vector<Matelot> v);
 
 };
 
