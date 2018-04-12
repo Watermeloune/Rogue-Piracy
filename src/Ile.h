@@ -3,6 +3,9 @@
 
 #include <cstdlib>
 #include <iostream>
+#include "Objet.h"
+#include "Arme.h"
+
 class Ile
 {
     public:
@@ -13,7 +16,7 @@ class Ile
         void setType();
         bool getType();
 
-        void  getTabRessource() ;
+        void  setTabRessource() ;
         Objet getTabRessource() ;
 
         void  setTabMagasin() ;
@@ -24,7 +27,7 @@ class Ile
 
     private:
 
-        //bool type;
+        bool type;
         vector <Objet> tabRessource ;
         vector <Objet> tabMagasin ;
         vector <Arme> tabArmurerie ;
