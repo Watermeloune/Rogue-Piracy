@@ -3,19 +3,30 @@
 #include "Bateau.h"
 #include "Ile.h"
 #include <iostream>
+#include <unistd.h>
+
 
 class Jeu {
-private:
+    private:
 
 
-public:
-    Bateau joueur;
-    Bateau ennemi;
-    Ile ile;
+    public:
+        Bateau joueur;
+        Bateau ennemi;
+        Ile ile;
 
-    Jeu();
-    ~Jeu();
-    void Combat();
+        bool debut;
+        bool attente;
+
+        Jeu();
+        ~Jeu();
+
+        bool toucheEstPressee(char touche);
+
+        void combat();
+        void init();
+        void boucleAttente();
+
 
 };
 

@@ -63,7 +63,7 @@ class Bateau
         void ajouterObjet(Objet objet);
 //        void supprimerObjet(Objet objet);
         void ajouterArme(Arme arme);
-//        void supprimerArme(Arme arme);
+        void supprimerArme(int numero);
 
 
     private:
@@ -72,16 +72,11 @@ class Bateau
         int maxPv;
         int capacite_cargo ;
         int capacite_equipage ;
-//<<<<<<<
-        // Sprite sprite ;
+
         Equipage equipage;
         std::vector<Objet> cargo;
         std::vector<Arme> listeArme;
         std::string nom ;
-//=======
-
-//>>>>>>> 9566cf95e55dedaa7c4198b3cf46e922136b8b43
-
 };
 
 #endif // BATEAU_H

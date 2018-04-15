@@ -4,7 +4,7 @@ CFLAGS =-Wall -pedantic -ansi -std=c++11 -O3 -I./SFML-2.4.2/include
 CC=g++
 
 RoguePiracy: main.o Bateau.o Matelot.o Equipage.o Fonctions.o Arme.o Objet.o Ile.o Jeu.o
-	g++ -o $(EXEDIR)/$@ $(OBJDIR)/main.o $(OBJDIR)/Bateau.o $(OBJDIR)/Matelot.o $(OBJDIR)/Jeu.o $(OBJDIR)/Objet.o $(OBJDIR)/Arme.o $(OBJDIR)/Fonctions.o $(OBJDIR)/Equipage.o $(OBJDIR)/Ile.o -L./SFML-2.4.2/lib -lsfml-graphics -lsfml-window -lsfml-system
+	g++ -o $(EXEDIR)/$@ $(OBJDIR)/main.o $(OBJDIR)/Bateau.o $(OBJDIR)/Matelot.o $(OBJDIR)/Jeu.o $(OBJDIR)/Objet.o $(OBJDIR)/Arme.o $(OBJDIR)/Fonctions.o $(OBJDIR)/Equipage.o $(OBJDIR)/Ile.o -L./SFML-2.4.2/lib -lsfml-graphics -lsfml-window -lsfml-system -lpthread
 
 main.o: src/main.cpp
 	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@

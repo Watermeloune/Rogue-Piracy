@@ -139,6 +139,11 @@ void Bateau::ajouterArme(Arme arme)
     listeArme.push_back(arme);
 }
 
+void Bateau::supprimerArme(int numero)
+{
+    listeArme.erase(listeArme.begin()+numero);
+}
+
 void Bateau::endommager(int dmg)
 {
     assert(dmg>=0);

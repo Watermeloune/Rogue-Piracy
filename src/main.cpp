@@ -9,6 +9,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <map>
+#include <atomic>
 #include "Jeu.h"
 
 
@@ -37,14 +38,41 @@ void afficheInfoBat(Bateau bat)
     std::cout << "================================" << '\n';
 }
 
-
-int main()
+void instantInput() //change proprietees console pour unbuffered input
 {
-    Jeu jeu;
-    Bateau bat(5);
-    Bateau bot(2);
-    jeu.joueur=bat;
-    jeu.ennemi=bot;
-    jeu.Combat();
-  return 0;
+  struct termios ctrl;
+  tcgetattr(STDIN_FILENO, &ctrl);
+  ctrl.c_lflag &= ~ICANON; // turning off canonical mode makes input unbuffered
+  tcsetattr(STDIN_FILENO, TCSANOW, &ctrl);
+}
+std::atomic<bool> stop(false);
+
+void loop() {
+    int i=0;
+    while(!stop)
+    {
+
+        i++;
+    }
+    std::cout << i << '\n';
+}
+
+void test()
+{
+    bool bi;
+    std::cin >> bi;
+    stop=bi;
+}
+
+int main() {
+    // ...
+    std::thread t(loop); // Separate thread for loop.
+    std::thread t2(test);
+    t2.join();
+    t.join(); // This actually starts a thread.
+
+
+
+    // ... other actions ...
+    return 0;
 }
