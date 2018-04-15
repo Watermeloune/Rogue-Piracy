@@ -13,6 +13,7 @@ private:
   int pv;
   int maxPv;
   int prix;
+  int tempsRecharge;
   std::vector<Matelot> listeMat;
 
 
@@ -25,12 +26,14 @@ public:
   int getPv();
   int getMaxPv();
   int getPrix();
+  int getTempsRecharge();
 
   void setDegats(int d);
   void setNbMat(int n);
   void setPv(int p);
   void setMaxPv(int m);
   void setPrix(int p);
+  void setTempsRecharge(int temps);
 
   void reparer(int bonus);
   void endommager(int degats);

@@ -3,8 +3,8 @@ EXEDIR=bin
 CFLAGS =-Wall -pedantic -ansi -std=c++11 -O3 -I./SFML-2.4.2/include
 CC=g++
 
-RoguePiracy: main.o Bateau.o Matelot.o Equipage.o Fonctions.o Arme.o Objet.o Ile.o
-	g++ -o $(EXEDIR)/$@ $(OBJDIR)/main.o $(OBJDIR)/Bateau.o $(OBJDIR)/Matelot.o $(OBJDIR)/Objet.o $(OBJDIR)/Arme.o $(OBJDIR)/Fonctions.o $(OBJDIR)/Equipage.o $(OBJDIR)/Ile.o -L./SFML-2.4.2/lib -lsfml-graphics -lsfml-window -lsfml-system
+RoguePiracy: main.o Bateau.o Matelot.o Equipage.o Fonctions.o Arme.o Objet.o Ile.o Jeu.o
+	g++ -o $(EXEDIR)/$@ $(OBJDIR)/main.o $(OBJDIR)/Bateau.o $(OBJDIR)/Matelot.o $(OBJDIR)/Jeu.o $(OBJDIR)/Objet.o $(OBJDIR)/Arme.o $(OBJDIR)/Fonctions.o $(OBJDIR)/Equipage.o $(OBJDIR)/Ile.o -L./SFML-2.4.2/lib -lsfml-graphics -lsfml-window -lsfml-system
 
 main.o: src/main.cpp
 	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
@@ -30,6 +30,8 @@ Objet.o: src/Objet.cpp src/Objet.h
 Ile.o: src/Ile.cpp src/Ile.h
 	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
 
+Jeu.o: src/Jeu.cpp src/Jeu.h
+	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
 
 clean:
 	rm -rf obj/*.o

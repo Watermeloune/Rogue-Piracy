@@ -31,10 +31,13 @@ class Bateau
         int  getCapacite_equipage();
 
         void operator=(Bateau copie);
+        Arme operator[](int n);
 
         void verifDetruit();
 
         void endommager(int dmg);
+
+        void tirer(Arme arme, Bateau & ennemi);
 
 
 
@@ -47,7 +50,7 @@ class Bateau
 //        void setCargo();
 //        Objet getCargo();
 
-//        void setListeArme();
+        void setListeArme(std::vector<Arme> * v);
         std::vector<Arme> * getListeArme();
 
         void setNom(std::string nom);

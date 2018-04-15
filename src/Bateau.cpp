@@ -30,6 +30,8 @@ Bateau::Bateau(int niveau)
     capacite_cargo=(rand() % (max - min + 1)) + min;
     capacite_equipage=(rand() % (max - min + 1)) + min;
     nom="bateau lvl "+std::to_string(niveau);
+    Arme arme(1,1,1,1);
+    listeArme.push_back(arme);
 }
 
 void Bateau::setPV(int PV)
@@ -47,6 +49,12 @@ void Bateau::operator=(Bateau copie)
     capacite_equipage=copie.getCapacite_equipage();
     setEquipage(copie.getEquipage());
     nom=copie.getNom();
+    setListeArme(copie.getListeArme());
+}
+
+Arme Bateau::operator[](int n)
+{
+    return listeArme.at(n);
 }
 
 int Bateau::getPV()
@@ -112,6 +120,14 @@ Equipage * Bateau::getEquipage()
     return e;
 }
 
+void Bateau::setListeArme(std::vector<Arme> * v)
+{
+    this->listeArme.clear();
+    for (unsigned int i = 0; i < v->size(); i++) {
+        this->listeArme.push_back(v->at(i));
+    }
+}
+
 std::vector<Arme> * Bateau::getListeArme()
 {
     std::vector<Arme> * v = & this->listeArme;
@@ -136,6 +152,10 @@ void Bateau::ajouterObjet(Objet objet)
     this->cargo.push_back(objet);
 }
 
+void Bateau::tirer(Arme arme, Bateau & ennemi)
+{
+    ennemi.endommager(arme.getDegats());
+}
 
 /*void Bateau::verifDetruit()
 {

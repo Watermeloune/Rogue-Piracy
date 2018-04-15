@@ -80,6 +80,16 @@ void Arme::endommager(int degats){
   }
 }
 
+int Arme::getTempsRecharge()
+{
+    return tempsRecharge;
+}
+
+void Arme::setTempsRecharge(int temps)
+{
+    tempsRecharge=temps;
+}
+
 void Arme::ajouterMatelot(Matelot mat, int i) {
   /*if (i<nbMat) {
     if (!listeMat[i]) {
