@@ -38,41 +38,11 @@ void afficheInfoBat(Bateau bat)
     std::cout << "================================" << '\n';
 }
 
-void instantInput() //change proprietees console pour unbuffered input
-{
-  struct termios ctrl;
-  tcgetattr(STDIN_FILENO, &ctrl);
-  ctrl.c_lflag &= ~ICANON; // turning off canonical mode makes input unbuffered
-  tcsetattr(STDIN_FILENO, TCSANOW, &ctrl);
-}
-std::atomic<bool> stop(false);
-
-void loop() {
-    int i=0;
-    while(!stop)
-    {
-
-        i++;
-    }
-    std::cout << i << '\n';
-}
-
-void test()
-{
-    bool bi;
-    std::cin >> bi;
-    stop=bi;
-}
 
 int main() {
-    // ...
-    std::thread t(loop); // Separate thread for loop.
-    std::thread t2(test);
-    t2.join();
-    t.join(); // This actually starts a thread.
 
+    Jeu jeu;
+    jeu.boucle();
 
-
-    // ... other actions ...
     return 0;
 }

@@ -4,6 +4,11 @@
 #include "Ile.h"
 #include <iostream>
 #include <unistd.h>
+#include <atomic>
+#include <termios.h>
+#include <thread>
+#include <chrono>
+
 
 
 class Jeu {
@@ -17,14 +22,19 @@ class Jeu {
 
         bool debut;
         bool attente;
+        bool enCombat;
+        double temps;
+        //temps en centieme de seconde
 
         Jeu();
         ~Jeu();
 
-        bool toucheEstPressee(char touche);
+        void effacerEcran();
+        void afficheInfoBat(Bateau bat);
 
-        void combat();
         void init();
+        void boucle();
+        void combat();
         void boucleAttente();
 
 

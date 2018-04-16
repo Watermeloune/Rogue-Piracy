@@ -4,12 +4,13 @@
 #include <iostream>
 #include <vector>
 
-Arme::Arme (int degats, int nbMatelots, int maxPv, int prix) {
+Arme::Arme (int degats, int nbMatelots, int maxPv, int prix, int tempsRecharge) {
   this->degats = degats;
   this->nbMat = nbMatelots;
   this->pv = maxPv;
   this->maxPv = maxPv;
   this->prix = prix;
+  this->tempsRecharge= tempsRecharge;
 }
 
 Arme::~Arme () {
@@ -88,6 +89,17 @@ int Arme::getTempsRecharge()
 void Arme::setTempsRecharge(int temps)
 {
     tempsRecharge=temps;
+}
+
+bool Arme::estPretATirer(double temps)
+{
+    double tmp=1.0*tempsRecharge;
+    if(fmod((temps/100.0),tmp)==0 && temps!=0)
+    {
+        return true;
+    }
+    else
+        return false;
 }
 
 void Arme::ajouterMatelot(Matelot mat, int i) {

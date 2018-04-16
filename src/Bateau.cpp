@@ -30,7 +30,7 @@ Bateau::Bateau(int niveau)
     capacite_cargo=(rand() % (max - min + 1)) + min;
     capacite_equipage=(rand() % (max - min + 1)) + min;
     nom="bateau lvl "+std::to_string(niveau);
-    Arme arme(1,1,1,1);
+    Arme arme(1,1,1,1,1);
     listeArme.push_back(arme);
 }
 

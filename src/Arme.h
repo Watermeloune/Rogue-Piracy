@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 #include "Matelot.h"
 
@@ -18,7 +19,7 @@ private:
 
 
 public:
-  Arme (int degats, int nbMatelots, int maxPv, int prix);
+  Arme (int degats, int nbMatelots, int maxPv, int prix, int tempsRecharge);
   Arme();
 
   int getDegats();
@@ -38,6 +39,7 @@ public:
   void reparer(int bonus);
   void endommager(int degats);
   void ajouterMatelot(Matelot mat, int i);
+  bool estPretATirer(double temps);
 
   virtual ~Arme ();
 
