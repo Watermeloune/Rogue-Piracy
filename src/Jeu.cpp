@@ -9,55 +9,38 @@ Jeu::~Jeu()
 
 }
 
-void Jeu::effacerEcran()
-{
-    #ifdef _WIN32
-      win.clear();
-    #else
-      std::cout << "\x1B[2J\x1B[H";
-    #endif
-}
-
-void Jeu::afficheInfoBat(Bateau bat)
-{
-    std::cout << bat.getNom() << '\n';
-    std::cout << "vie du bateau : ";
-    for (int i = 0; i < bat.getPV(); i++) {
-        std::cout << '|';
-    }
-    std::cout << '\n' << bat.getPV() << "/" << bat.getMaxPv();
-    std::cout << '\n' << "taille equipage : " << bat.getEquipage()->getTabEquipage()->size() << '\n';
-    for (unsigned int i = 0; i <bat.getListeArme()->size() ; i++) {
-        std::cout << "charge cannon "<< i << " : "<< fmod(temps,bat[i].getTempsRecharge()*100) << '/' << bat[i].getTempsRecharge()*100 << '\n';
-    }
-    std::cout << "================================" << '\n';
-}
-
 void Jeu::boucle()
 {
     init();
     enCombat=true;
-    effacerEcran();
-    afficheInfoBat(joueur);
-    afficheInfoBat(ennemi);
+    AffichageTxt affichage;
+
 
     while (1)
     {
         if(enCombat)
+            {
+                combat();
+                affichage.infoBat(joueur, temps);
+                affichage.infoBat(ennemi, temps);
+            }
+        if(joueur.getPV()==0)
         {
-            combat();
-            afficheInfoBat(joueur);
-            afficheInfoBat(ennemi);
-        }
-        else
+            std::cout << "game over" << '\n';
             break;
-
-
-            effacerEcran();
-
+        }
+        if(ennemi.getPV()==0)
+        {
+            niveau++;
+            recompence();
+            Bateau tmp(niveau);
+            ennemi=tmp;
+            enCombat=true;
+        }
 
         temps++;
-        usleep(10000);
+        affichage.effacerEcran();
+        usleep(1*10000);
     }
 
 }
@@ -66,12 +49,24 @@ void Jeu::init()
 {
     debut=true;
     temps=0;
+    niveau=1;
+    int choix=0;
+    Arme arme1(1);
+    Arme arme2(1);
+    Arme arme3(1);
+    std::string nom;
+    AffichageTxt affichage;
+    affichage.debut(nom, choix,arme1,arme2, arme3);
 
-    Bateau bat(10,10,10,10,"l'Espadon");
-    Arme arme1(3,1,3,10,3);
-    Arme arme2(5,1,5,10,5);
-    bat.ajouterArme(arme1);
-    bat.ajouterArme(arme2);
+    Bateau bat(25,25,25,25,nom);
+    if(choix==1)
+        bat.ajouterArme(arme1);
+    if(choix==2)
+        bat.ajouterArme(arme2);
+    if(choix==3)
+        bat.ajouterArme(arme3);
+
+
     Matelot mat1(5,5,"Jeans-Louis");
     Matelot mat2(5,5,"Juan-Pedro");
     bat.getEquipage()->ajoutMatelot(mat1);
@@ -104,4 +99,17 @@ void Jeu::combat()
     }
     else
         enCombat=false;
+}
+
+void Jeu::recompence()
+{
+    AffichageTxt affichage;
+    joueur.reparer(5);
+    int choix=0;
+    if(joueur.getListeArme()->size()>5)
+    {
+        affichage.choixArme(choix, ennemi.getListeArme());
+        joueur.ajouterArme(ennemi[choix-1]);
+    }
+
 }

@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
 
 #include "Matelot.h"
 
@@ -21,6 +22,7 @@ private:
 public:
   Arme (int degats, int nbMatelots, int maxPv, int prix, int tempsRecharge);
   Arme();
+  Arme(int niveau);
 
   int getDegats();
   int getNbMat();

@@ -36,6 +36,7 @@ class Bateau
         void verifDetruit();
 
         void endommager(int dmg);
+        void reparer(int reparation);
 
         void tirer(Arme arme, Bateau & ennemi);
 

@@ -17,6 +17,24 @@ Arme::~Arme () {
 
 }
 
+Arme::Arme(int niveau)
+{
+    int total=4+2*niveau;
+
+    tempsRecharge=rand()%total/2+1;
+    total-=tempsRecharge;
+    maxPv=rand()%total/2+1;
+    total-=maxPv;
+    degats=rand()%total+1;
+
+    nbMat=niveau;
+    pv=maxPv;
+    prix=niveau*10;
+
+
+
+}
+
 Arme::Arme()
 {
     this->degats = 0;

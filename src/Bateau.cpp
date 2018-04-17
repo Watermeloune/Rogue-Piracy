@@ -30,8 +30,11 @@ Bateau::Bateau(int niveau)
     capacite_cargo=(rand() % (max - min + 1)) + min;
     capacite_equipage=(rand() % (max - min + 1)) + min;
     nom="bateau lvl "+std::to_string(niveau);
-    Arme arme(1,1,1,1,1);
-    listeArme.push_back(arme);
+
+    for (int i = 0; i < niveau/3+1; i++) {
+        Arme arme(niveau);
+        ajouterArme(arme);
+    }
 }
 
 void Bateau::setPV(int PV)
@@ -151,6 +154,14 @@ void Bateau::endommager(int dmg)
         this->PV=0;
     else
         this->PV=PV-dmg;
+}
+
+void Bateau::reparer(int reparation)
+{
+    if(PV+reparation>=maxPv)
+        PV=maxPv;
+    else
+        PV+=reparation;
 }
 void Bateau::ajouterObjet(Objet objet)
 {

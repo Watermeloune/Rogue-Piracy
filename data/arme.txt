@@ -1,0 +1,6 @@
+degats=5;
+nbMat=5;
+pv=5;
+maxPv=5;
+prix=5;
+tempsRecharge=5;

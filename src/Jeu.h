@@ -1,6 +1,7 @@
 #ifndef JEU_H
 #define JEU_H
 #include "Bateau.h"
+#include "AffichageTxt.h"
 #include "Ile.h"
 #include <iostream>
 #include <unistd.h>
@@ -19,6 +20,9 @@ class Jeu {
         Bateau joueur;
         Bateau ennemi;
         Ile ile;
+        //AffichageTxt affichage;
+
+        int niveau;
 
         bool debut;
         bool attente;
@@ -29,13 +33,13 @@ class Jeu {
         Jeu();
         ~Jeu();
 
-        void effacerEcran();
-        void afficheInfoBat(Bateau bat);
+
 
         void init();
         void boucle();
         void combat();
         void boucleAttente();
+        void recompence();
 
 
 };
