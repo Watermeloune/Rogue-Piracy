@@ -19,8 +19,11 @@ class Ile
         void  setRessource(int ressourceAjouteeOuSoustree) ;
         int getRessource() ;
 
-        void  setMagasin() ;
-        Objet getMagasin() ;
+        void setTabRessource(std::vector<Objet> * r );
+        std::vector<Objet> * getTabRessource();
+
+        void  setTabMagasin(std::vector<Objet> * o );
+        std::vector<Objet> * getTabMagasin() ;
 
         void setArmurerie() ;
         Objet getArmurerie() ;
@@ -28,9 +31,9 @@ class Ile
     private:
 
         bool type;
-//        std::vector <Objet> Ressource ;
         int Ressource;
-        std::vector <Objet> Magasin ;
+        std::vector <Objet> tabRessource ; //inutile !!
+        std::vector <Objet> tabMagasin ;
         std::vector <Arme> Armurerie ;
 };
 
