@@ -73,3 +73,18 @@ std::vector<Objet> * Ile::getTabMagasin()
     return m;
 }
 
+
+void Ile::setTabArmurerie(std::vector<Objet> * o )//newMagasin
+{
+    this->tabMagasin.clear();
+    for (unsigned int i = 0; i < o->size(); i++) {
+        this->tabMagasin.push_back(o->at(i));
+    }
+}
+
+
+std::vector<Objet> * Ile::getTabArmurerie()
+{
+    std::vector<Objet> * m = & this->tabMagasin;
+    return m;
+}

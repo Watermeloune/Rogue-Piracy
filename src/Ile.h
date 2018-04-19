@@ -22,11 +22,11 @@ class Ile
         void setTabRessource(std::vector<Objet> * r );
         std::vector<Objet> * getTabRessource();
 
-        void  setTabMagasin(std::vector<Objet> * o );
+        void setTabMagasin(std::vector<Objet> * o );
         std::vector<Objet> * getTabMagasin() ;
 
-        void setArmurerie() ;
-        Objet getArmurerie() ;
+        void setTabArmurerie(std::vector<Objet> * o ) ;
+        std::vector<Objet> * getTabArmurerie() ;
 
     private:
 
