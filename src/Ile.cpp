@@ -7,12 +7,34 @@ Ile::Ile()
 
 Ile::Ile(int niveau)
 {
-    Bateau batlvl(niveau);
-    bot=batlvl;
+    srand(time(NULL));
 
 }
 
 Ile::~Ile()
 {
     //dtor
+}
+
+
+void Ile::setType(bool newType)
+{
+	type = newType ;
+}
+
+bool Ile::getType()
+{
+	return type;
+}
+
+
+void  Ile::setRessource(int ressourceAjouteeOuSoustree)//à corriger
+{
+    Ressource = ressourceAjouteeOuSoustree;
+
+}
+
+int  Ile::getRessource()
+{
+	return Ressource; //à corriger
 }

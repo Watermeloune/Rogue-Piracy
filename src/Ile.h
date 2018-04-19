@@ -3,7 +3,8 @@
 
 #include <cstdlib>
 #include <iostream>
-#include "Bateau.h"
+#include "Objet.h"
+#include "Arme.h"
 
 class Ile
 {
@@ -12,27 +13,25 @@ class Ile
         Ile(int niveau);
         ~Ile();
 
-        Bateau bot;
-
-        void setType();
+        void setType(bool newType);
         bool getType();
 
-        void  setTabRessource() ;
-        Objet getTabRessource() ;
+        void  setRessource(int ressourceAjouteeOuSoustree) ;
+        int getRessource() ;
 
-        void  setTabMagasin() ;
-        Objet getTabMagasin() ;
+        void  setMagasin() ;
+        Objet getMagasin() ;
 
-        void setTabArmurerie() ;
-        Objet getTabArmurerie() ;
+        void setArmurerie() ;
+        Objet getArmurerie() ;
 
     private:
 
-        //bool type;
-        std::vector<Objet>tabRessource ;
-        std::vector<Objet>tabMagasin ;
-        std::vector<Arme> abArmurerie ;
-
+        bool type;
+//        std::vector <Objet> Ressource ;
+        int Ressource;
+        std::vector <Objet> Magasin ;
+        std::vector <Arme> Armurerie ;
 };
 
 #endif // Ile_H
