@@ -14,9 +14,9 @@ void Joueur::setNom(std::string nouveauNom)
 {
     nom=nouveauNom;
 }
-std::string getNom()
+std::string Joueur::getNom()
 {
-//    return nom;
+    return nom;
 }
 
 void Joueur::setScore(int nouveauScore)
